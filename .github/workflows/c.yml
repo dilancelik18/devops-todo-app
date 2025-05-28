@@ -1,24 +1,25 @@
-name: Node.js CI
+name: build-and-test
 
-on:
-  push:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
 
-      - name: Node kur
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+    - name: Node kur
+      uses: actions/setup-node@v3
+      with:
+        node-version: "18"
 
-      - name: Bağımlılıkları yükle
-        run: npm install
+    - name: Bağımlılıkları yükle
+      run: npm install
 
-      - name: Testleri çalıştır
-        run: npm test
+    - name: Jest için çalıştırma izni ver
+      run: chmod +x ./node_modules/.bin/jest
+
+    - name: Testleri çalıştır
+      run: npm test
