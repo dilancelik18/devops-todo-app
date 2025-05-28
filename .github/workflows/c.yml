@@ -1,0 +1,18 @@
+name: CI Pipeline
+
+# Hangi durumlarda çalışacağını belirt
+on:
+  push:
+    branches: [ "main" ]  # Sadece main branch'e push yapılınca çalışır
+
+# Yapılacak işler (jobs) tanımlanıyor
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Sanal bir Ubuntu ortamı kullan
+
+    steps:
+      - name: Reposu checkout et
+        uses: actions/checkout@v3  # Kodları indir
+
+      - name: Hello World çıktısı ver
+        run: echo "CI Pipeline başarıyla çalıştı 🎉"
