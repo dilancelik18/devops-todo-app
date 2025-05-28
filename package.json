@@ -26,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/dilancelik18/devops-todo-app/issues"
   },
+    "scripts": {
+  "test": "jest"
+},
+
   "homepage": "https://github.com/dilancelik18/devops-todo-app#readme"
+    
 }
