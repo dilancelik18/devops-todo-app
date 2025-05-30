@@ -14,8 +14,8 @@
     "supertest": "^6.3.4"
   },
   "scripts": {
-    "test": "npx jest"
-  },
+  "test": "jest"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dilancelik18/devops-todo-app.git"
